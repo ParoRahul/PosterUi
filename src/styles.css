@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import "~bootstrap/dist/css/bootstrap.css" */
+
+/* *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    user-select: none;
+} */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+h1 { 
+    font-family: "Open Sans"; 
+    font-size: 24px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 26.4px; 
+}
+
+h3 { 
+    font-family: "Open Sans"; 
+    font-size: 14px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 15.4px; 
+} 
+
+h5 {
+    font-family: "Open Sans"; 
+    font-size: 8px;
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400;
+    line-height: 16px; 
+}
+
+p { 
+    font-family: "Open Sans"; 
+    font-size: 16px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    line-height: 20px; 
+} 
+    
+blockquote { 
+    font-family: "Open Sans"; 
+    font-size: 21px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    line-height: 30px; 
+} 
+pre { 
+    font-family: "Open Sans"; 
+    font-size: 13px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    line-height: 18.5714px; 
+}
+
+:root {
+    --theme-color:  rgb(128, 160, 161); 
+    --theme-dark-color: rgb(95, 156, 158); 
+    --theme-light-color: rgb(128, 160, 161);
+}
+
+.material-icons-outlined,
+.material-icons.material-icons--outlined,
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: lighter;
+    font-style: normal;
+    font-size: 24px;  
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    vertical-align: middle !important;
+}

@@ -1,0 +1,32 @@
+:host{
+    margin:0;
+    padding:0;
+    user-select: none;
+}
+
+/* circle {
+    fill: #95b7c2;
+    opacity: 0.3;
+    stroke: white;
+} */
+
+/* text {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+    fill: white;
+    font-size: 8px;
+    text-anchor: middle;
+} */
+
+/* h1,h2,h3,h4,h5,h6 {
+    font-family: "Open Sans";
+} */
+
+.material-icons {
+    font-size: 36px; 
+    color: rgb(20, 20, 20); 
+}
+
+.flex-item {
+    flex: 1 1 450px;
+    /* flex: 1 0 200px; */
+} 

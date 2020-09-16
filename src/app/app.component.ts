@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+
+import { HomeComponent } from './home/component/home/home.component';
+import { NavbarComponent } from './home/component/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PosterUi';
+
+  @ViewChild(HomeComponent, {static: true}) homeComponent;
+
+  @ViewChild(NavbarComponent, {static: true}) navbarComponent;
+
 }

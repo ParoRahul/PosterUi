@@ -1,0 +1,46 @@
+<div class="container text-center p-5">
+    <br>
+    <!-- <i class="material-icons" style="color: #6c757d; font-size: 96px;">account_circle</i> -->
+    <i class="material-icons" style="color: #6c757d; font-size: 96px;">lock</i>
+    <form [formGroup]="form" class="col-sm-6 text-center p-5">
+        <div class="m-0 mb-3">
+            <button class="btn btn-outline-dark btn-sm m-0 mr-1" type="button">
+            Signin with FaceBook</button>
+            <button class="btn btn-outline-dark btn-sm m-0 ml-1" type="button">
+            Signin with Google+</button>
+        </div>
+        <div class="input-group form-group ">
+            <div class="input-group-prepend ">
+                <div class="input-group-text">
+                    <i class="material-icons">perm_identity</i>
+                </div>
+            </div>
+            <input  formControlName="username"
+                id="username" 
+                type="text" 
+                placeholder="Enter Username"
+                class="form-control form-control ">
+        </div>
+        <div class="input-group form-group">
+            <div class="input-group-prepend ">
+                <div class="input-group-text">
+                    <i class="material-icons">vpn_key</i>
+                </div>
+            </div>
+            <input  formControlName="password"
+                id="password" 
+                type="password" 
+                placeholder="Enter password"
+                class="form-control form-control ">
+        </div>
+        <div class="m-0 mb-3" *ngIf="!validLogin">
+            <div class="text-danger">Invalid Username and / or Password</div>
+        </div>  
+        <button class="btn btn-link btn-sm d-block m-0 mb-3" 
+                type="button">Need help ?</button>
+        <button class="btn btn-outline-dark btn-sm btn-block " 
+                [disabled]="!form.valid"
+                type="button"
+                (click)=login() >Login</button>        
+    </form>
+</div>

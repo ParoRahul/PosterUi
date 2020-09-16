@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+    <i class='material-icons' style = 'color: aliceblue;'>widgets</i>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item " [ngClass] = "{'active': activatelink == 'home' }" >
+                <a class="nav-link" href="#home" (click) = "activatelink = 'home'">Home</a>
+            </li>
+            <li class="nav-item" [ngClass] = "{'active': activatelink == 'link1' }">
+                <a class="nav-link" href="#getstarted" (click) = "activatelink = 'link1'">get started</a>
+            </li>
+            <li class="nav-item" [ngClass] = "{'active': activatelink == 'link2' }">
+                <a class="nav-link" href="#" (click) = "activatelink = 'link2'" >Link3</a>
+            </li>
+        </ul>
+        <button class="btn btn-md btn-secondary m-0 mr-2" 
+                type="button" (click) = scheduleAppLogin()> Signin
+        </button>
+    </div>
+</nav>
+

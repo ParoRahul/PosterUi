@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+<div class="container text-center p-0 pt-5" id='home'>
+    <hr class="pt-4">
+    <h1 class="text-dark ">{{ headingText }}</h1>
+</div>    
+
+<div class="container text-center p-0 pt-4" id='svgContainer'>
+    <hr class="p-0 pt-4">
+    <img class="img-fluid" src="assets/homescreen.png" alt="home screen image" />
+</div> 
+
+<div class="container text-center p-0 pt-5" id='getstarted'>
+    <hr class="p-0 pt-5">
+    <h3 class="text-dark p-0 pb-5">It's easier than you think</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, itaque voluptate minus iure architecto officiis quasi odit, nostrum incidunt accusamus quia neque provident sapiente repellat eum praesentium debitis dolore perferendis.</p>
+</div>
+
+<div class="container text-center p-0 pt-5">
+    <hr class="pt-5">
+    <h3 class="text-dark p-0 pb-5">The hard parts made easy</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur deserunt maxime natus sunt? Amet natus aut quos dolore corrupti tenetur laborum quae hic quibusdam dicta maiores porro architecto, numquam quisquam?</p>
+</div>
+
+<div class="container text-center p-0 pt-5">
+    <hr class="pt-5">
+    <h3 class="text-md-center text-dark ">Everything you would expect</h3>
+</div>
+
+<div class="container d-flex flex-wrap justify-content-center p-0 py-5">
+
+    <ng-container *ngFor="let feature of service.featuresObjects">       
+        <div class="m-1 flex-item card border-secondary">
+            <div class="p-3 d-flex flex-row text-dark ">
+                <i class="material-icons d-inline-block">{{feature.logoName}}</i>
+                <div class="text-center font-weight-bold flex-grow-1">{{feature.shortDescription}}</div>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{feature.longDescription}}</p>
+            </div>
+        </div>
+    </ng-container>
+
+</div>
+
+<app-footer></app-footer>  

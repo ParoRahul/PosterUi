@@ -1,0 +1,40 @@
+<div class="parent">
+    <br><br><br><br>
+    <div class="card text-center form-width">
+    
+    <form [formGroup]="form" class = "card-body">
+        <i class="material-icons" style="color: #363c41; font-size: 48px;">widgets</i>
+        <p class="display-6 m-0 my-4">Sign in to Poster Maker</p>
+        
+        <input type="email" 
+                formControlName="username"
+                id="defaultLoginFormEmail" 
+                class="form-control mb-4" 
+                placeholder="E-mail">
+        
+        <input  type="password"
+                formControlName="password" 
+                id="defaultLoginFormPassword" 
+                class="form-control mb-4" 
+                placeholder="Password">                
+
+        <div class="m-0 mb-3 text-danger" *ngIf="!validLogin">Invalid Username and / or Password</div>
+
+        <p class="my-4"><a href="">Forget Password ?</a> </p>
+
+        <button class="btn btn-primary btn-block " 
+                [disabled]="!form.valid" 
+                type="submit"
+                (click)=login() >Sign in</button>
+
+        <p class="m-0 my-4 ">Not a member ? <a href="">Register</a></p>
+        
+        <!-- Social login -->
+        <!-- <p>or sign in with</p> -->
+    
+        <!-- <a type="button" class="light-blue-text mx-2">
+            <span class="material-icons">facebook</span>
+        </a> -->   
+    </form>
+</div>
+</div>
