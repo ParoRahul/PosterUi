@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticateService } from '../../service/authenticate.service';
 import { Router } from '@angular/router';
+import { NavbarService } from 'src/app/navbar/service/navbar.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   public validLogin: boolean;
 
   constructor(private service: AuthenticateService,
-              private route: Router ){
+              private route: Router,
+              private navbarService: NavbarService ){
     this.validLogin = true;
   }
 
@@ -27,10 +29,15 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.navbarService.hide();
     this.form = new FormGroup({
             username: new FormControl('', Validators.required),
             password: new FormControl('', Validators.required)
     });
+  }
+
+  route2Home(){
+    this.route.navigate(['']);
   }
 
   login(){

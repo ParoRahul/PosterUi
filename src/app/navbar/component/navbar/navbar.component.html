@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top" *ngIf="navbarService.visible">
+    <i class='material-icons' style = 'color: aliceblue;'>widgets</i>
+    <button class="navbar-toggler m-0" type="button"  (click)="toggleNavbar()">
+        <!-- <span class="navbar-toggler-icon"></span> -->
+        <span class="material-icons">keyboard_arrow_down</span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" >
+        <ng-container *ngIf="navbarService.homeNavgitionActive">
+            <ul class="nav navbar-nav navbar-right mr-auto">
+                <li class="nav-item " [ngClass] = "{'active': activatelink == 'home' }" >
+                    <a class="nav-link" href="#home" (click) = "nevigate2Home()">Home</a>
+                </li>
+                <li class="nav-item" [ngClass] = "{'active': activatelink == 'link1' }">
+                    <a class="nav-link" href="#getstarted" (click) = "nevigate2link1()">get started</a>
+                </li>
+                <li class="nav-item" [ngClass] = "{'active': activatelink == 'link2' }">
+                    <a class="nav-link" href="#" (click) = "nevigate2link2()" >Link3</a>
+                </li>
+                <li class="nav-item" [ngClass] = "{'active': activatelink == 'link4' }">
+                    <a class="nav-link" href="#" (click) = "nevigate2link2()" >Link4</a>
+                </li>
+                <li class="nav-item" [ngClass] = "{'active': activatelink == 'link5' }">
+                    <a class="nav-link" href="#" (click) = "nevigate2link2()" >Link5</a>
+                </li>
+                <li class="nav-item" [ngClass] = "{'active': activatelink == 'link6' }">
+                    <a class="nav-link" href="#" (click) = "nevigate2link2()" >Link6</a>
+                </li>
+            </ul>
+            <button class="btn btn-md bg-transparent btn-dark float-right " 
+                    type="button" (click) = scheduleAppLogin()> Signin
+            </button>
+        </ng-container>
+
+        <ng-container *ngIf ="navbarService.homeNavgitionActive == false">
+            <ul class="navbar-nav m-0 mr-auto">
+                <li class="nav-item " [ngClass] = "{'active': activatelink == 'home' }" >
+                    <a class="nav-link" href="#home" (click) = "activatelink = 'home'">Home</a>
+                </li>
+            </ul>
+            <div class="dropdown">
+                <button class="btn btn-md btn-outline-light dropdown-toggle float-right" 
+                type="button" (click) = "showDropDoen($event)" >
+                    <i class='material-icons' style="font-size: 24px;" >account_circle</i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right m-0" #dropdownitems 
+                    [ngClass]="{ 'show': showDropdown }">
+                    <li><h6 class="dropdown-header">Signed  in as Rahul</h6></li>
+                    <li><button class="dropdown-item"  type="button">Your Profile</button></li>
+                    <li><button class="dropdown-item" type="button">Your Projects</button></li>
+                    <li><div class="dropdown-divider"></div></li>
+                    <li><button class="dropdown-item" type="button">Help</button></li>
+                    <li><button class="dropdown-item" type="button">Settings</button></li>
+                    <li><button class="dropdown-item" type="button">Sign out</button></li>
+                </ul>
+            </div>
+        </ng-container>
+        
+    </div>
+</nav>
+

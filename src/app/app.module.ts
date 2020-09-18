@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 
 import { HomeModule } from './home/home.module';
 import { AuthenticationModule } from './authentication/authentication.module';
-
+import { UserspaceModule } from './userspace/userspace.module';
+import { NavbarModule } from './navbar/navbar.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,10 @@ import { AuthenticationModule } from './authentication/authentication.module';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    NavbarModule,
     HomeModule,
-    AuthenticationModule
+    AuthenticationModule,
+    UserspaceModule
   ],
   providers: [],
   bootstrap: [AppComponent],

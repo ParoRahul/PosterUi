@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarService } from '../../../navbar/service/navbar.service';
 
 @Component({
   selector: 'app-userhome',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navService: NavbarService) { }
 
   ngOnInit(): void {
+    this.navService.show();
+    this.navService.deacivateHomeNavigation();
   }
 
 }

@@ -7,6 +7,8 @@
     width: 350px;
 }
 
-.btn-dark-thm{
-    background-color: var(--theme-dark-color);
+.btn:focus,.btn:active:focus, .btn.btn:active:focus,
+.btn.focus,.btn:active.focus, .btn.active.focus {
+    outline: none !important;
+    box-shadow: none;
 }

@@ -3,7 +3,10 @@
     <div class="card text-center form-width">
     
     <form [formGroup]="form" class = "card-body">
-        <i class="material-icons" style="color: #363c41; font-size: 48px;">widgets</i>
+        <button  class="btn btn-link btn-sm" (click) = "route2Home()">
+            <i class="material-icons" style="color: #363c41; font-size: 48px;">widgets</i>
+        </button>
+        
         <p class="display-6 m-0 my-4">Sign in to Poster Maker</p>
         
         <input type="email" 

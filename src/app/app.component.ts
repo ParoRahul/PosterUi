@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 
 import { HomeComponent } from './home/component/home/home.component';
-import { NavbarComponent } from './home/component/navbar/navbar.component';
+import { NavbarComponent } from './navbar/component/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',

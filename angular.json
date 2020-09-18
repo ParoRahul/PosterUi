@@ -117,7 +117,6 @@
               "node_modules/material-design-icons/iconfont/material-icons.css"
             ],
             "scripts": [
-              "./node_modules/@fortawesome/fontawesome-free/js/all.js"
             ]
           }
         },
