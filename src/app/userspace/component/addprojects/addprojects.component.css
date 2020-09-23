@@ -1,18 +1,16 @@
-/* .btn:focus,.btn:active:focus, .btn.btn:active:focus,
-.btn.focus,.btn:active.focus, .btn.active.focus {
-    outline: none !important;
-    box-shadow: none;
-} */
-
 .btn:focus,.btn:active:focus, .btn.btn:active:focus,
 .btn.focus,.btn:active.focus, .btn.active.focus{
-    background-color: var(--light-gray-2);
-    border-bottom: 1px solid var(--warning);
     outline: none !important;
     box-shadow: none;
 }
 
-.btn:hover{
+.sp-btn:focus,.sp-btn:active:focus, .sp-btn.sp-btn:active:focus,
+.sp-btn.focus,.sp-btn:active.focus, .sp-btn.active.focus{
+    background-color: var(--light-gray-2);
+    border-bottom: 1px solid var(--warning);
+}
+
+.sp-btn:hover{
     background-color: var(--light-gray-3);
 }
 

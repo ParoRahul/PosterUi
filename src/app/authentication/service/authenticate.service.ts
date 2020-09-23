@@ -45,7 +45,7 @@ export class AuthenticateService {
       const result = response;
       if (  result && result.token ) {
             localStorage.setItem('token', result.token );
-            const tokenDecode = this.jwtHelperService.decodeToken(result.token);
+            // const tokenDecode = this.jwtHelperService.decodeToken(result.token);
             this.loggedIn.next(true);
             this.validUser.next(true);
             this.route.navigate(['/home']);
@@ -66,6 +66,7 @@ export class AuthenticateService {
   }
 
   public isLogedin(): boolean {
+    console.log(this.jwtHelperService.decodeToken(localStorage.getItem('token')));
     return this.jwtHelperService.isTokenExpired();
   }
 

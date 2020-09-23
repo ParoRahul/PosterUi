@@ -105,3 +105,7 @@ pre {
 .bg-light-gray2{
     background-color: var(--light-gray-2);
 }
+
+.bg-light-gray3{
+    background-color: var(--light-gray-3);
+}
