@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener, ElementRef, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticateService } from 'src/app/authentication/service/authenticate.service';
 import { NavbarService } from '../../service/navbar.service';
 
 @Component({
@@ -19,7 +20,9 @@ export class NavbarComponent implements OnInit {
 
   public clicked = false;
 
-  constructor(private route: Router, public navbarService: NavbarService ) { }
+  constructor(private route: Router,
+              public navbarService: NavbarService,
+              private authService: AuthenticateService ) { }
 
   ngOnInit(): void {
     this.activatelink = 'home';
@@ -78,10 +81,15 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('document:click', ['event'])
   private clickedOutside(event): void {
-      if (this.clicked) {
-          this.element.nativeElement.classList.toggle('show');
-          this.clicked = false;
-      }
+    if (this.clicked && !this.navbarService.homeNavgitionActive) {
+        this.element.nativeElement.classList.toggle('show');
+        this.clicked = false;
+    }
+  }
+
+  signOut(){
+    this.authService.logout();
+    this.route.navigate(['/']);
   }
 
 

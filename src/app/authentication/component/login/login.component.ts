@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticateService } from '../../service/authenticate.service';
 import { Router } from '@angular/router';
@@ -9,51 +9,47 @@ import { NavbarService } from 'src/app/navbar/service/navbar.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements  AfterViewInit , OnDestroy {
 
   public form: FormGroup;
   public validLogin: boolean;
+
+  private loginStatusSubscription: any;
 
   constructor(private service: AuthenticateService,
               private route: Router,
               private navbarService: NavbarService ){
     this.validLogin = true;
+    this.form = new FormGroup({
+          mailid: new FormControl('', Validators.required),
+          password: new FormControl('', Validators.required)
+    });
   }
 
-  get username(){
-    return this.form.get('username');
+  get mailid(){
+    return this.form.get('mailid');
   }
 
   get password(){
     return this.form.get('password');
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.navbarService.hide();
-    this.form = new FormGroup({
-            username: new FormControl('', Validators.required),
-            password: new FormControl('', Validators.required)
+    this.loginStatusSubscription = this.service.validUserObserver
+    .subscribe( (status: boolean) => {
+        if (! status) {
+            this.form.setErrors({validLogin: false });
+        }
     });
   }
 
-  route2Home(){
-    this.route.navigate(['']);
-  }
+  ngOnDestroy() { this.loginStatusSubscription.unsubscribe(); }
 
-  login(){
-    console.log(this.form.value);
-    this.route.navigate(['/home']);
-    /* this.service.login(this.form.value)
-    .subscribe( result => {
-      if (result){
-          console.log(result);
-          this.route.navigate(['/userhome']);
-      }
-      else{
-        this.validLogin = false;
-        console.log(result);
-      }
-    }); */
+  route2Home() { this.route.navigate(['']); }
+
+  login() {
+    this.service.login(this.form.value);
   }
 
 }

@@ -68,6 +68,9 @@ pre {
     --theme-color:  rgb(128, 160, 161); 
     --theme-dark-color: rgb(95, 156, 158); 
     --theme-light-color: rgb(128, 160, 161);
+    --light-gray-1: rgb(201, 200, 198);
+    --light-gray-2: rgb(226, 229, 226);
+    --light-gray-3: rgb(235,235,235);
 }
 
 .material-icons-outlined,
@@ -94,3 +97,11 @@ pre {
     outline: none !important;
     box-shadow: none;
 } */
+
+.bg-light-gray1{
+    background-color: var(--light-gray-1);
+}
+
+.bg-light-gray2{
+    background-color: var(--light-gray-2);
+}

@@ -1,11 +1,12 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top" *ngIf="navbarService.visible">
     <i class='material-icons' style = 'color: aliceblue;'>widgets</i>
-    <button class="navbar-toggler m-0" type="button"  (click)="toggleNavbar()">
-        <!-- <span class="navbar-toggler-icon"></span> -->
-        <span class="material-icons">keyboard_arrow_down</span>
-    </button>
-    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" >
-        <ng-container *ngIf="navbarService.homeNavgitionActive">
+    <ng-container *ngIf="navbarService.homeNavgitionActive">
+        <button class="navbar-toggler m-0" type="button"  (click)="toggleNavbar()">
+            <!-- <span class="navbar-toggler-icon"></span> keyboard_arrow_down-->
+            <span class="material-icons">list</span>
+        </button>
+    
+        <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }" >        
             <ul class="nav navbar-nav navbar-right mr-auto">
                 <li class="nav-item " [ngClass] = "{'active': activatelink == 'home' }" >
                     <a class="nav-link" href="#home" (click) = "nevigate2Home()">Home</a>
@@ -26,35 +27,43 @@
                     <a class="nav-link" href="#" (click) = "nevigate2link2()" >Link6</a>
                 </li>
             </ul>
-            <button class="btn btn-md bg-transparent btn-dark float-right " 
-                    type="button" (click) = scheduleAppLogin()> Signin
-            </button>
-        </ng-container>
+            <button class="btn btn-md btn-outline-secondary bg-transparent float-right" 
+                type="button" (click) = scheduleAppLogin()> Signin
+            </button> 
+        </div>
+    </ng-container>
 
-        <ng-container *ngIf ="navbarService.homeNavgitionActive == false">
+    <ng-container *ngIf ="navbarService.homeNavgitionActive == false">
+        <button class="navbar-toggler m-0" type="button"  (click)="toggleNavbar()">
+            <!-- <span class="navbar-toggler-icon"></span> keyboard_arrow_down-->
+            <span class="material-icons">list</span>
+        </button>
+        <div class="collapse navbar-collapse " [ngClass]="{ 'show': navbarOpen }" >
             <ul class="navbar-nav m-0 mr-auto">
-                <li class="nav-item " [ngClass] = "{'active': activatelink == 'home' }" >
-                    <a class="nav-link" href="#home" (click) = "activatelink = 'home'">Home</a>
+                <li class="nav-item " [ngClass] = "{'active': activatelink == 'Explore' }" >
+                    <a class="nav-link" href="#home" (click) = "activatelink = 'Explore'">Explore</a>
+                </li>
+                <li class="nav-item " [ngClass] = "{'active': activatelink == 'Feedback' }" >
+                    <a class="nav-link" href="#home" (click) = "activatelink = 'Feedback'">Feedback</a>
+                </li>
+                <li class="nav-item " [ngClass] = "{'active': activatelink == 'Help' }" >
+                    <a class="nav-link" href="#home" (click) = "activatelink = 'Help'">Help</a>
                 </li>
             </ul>
-            <div class="dropdown">
-                <button class="btn btn-md btn-outline-light dropdown-toggle float-right" 
+            <button class="btn btn-sm btn-outline-secondary bg-transparent float-right"  
                 type="button" (click) = "showDropDoen($event)" >
-                    <i class='material-icons' style="font-size: 24px;" >account_circle</i>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-right m-0" #dropdownitems 
-                    [ngClass]="{ 'show': showDropdown }">
-                    <li><h6 class="dropdown-header">Signed  in as Rahul</h6></li>
-                    <li><button class="dropdown-item"  type="button">Your Profile</button></li>
-                    <li><button class="dropdown-item" type="button">Your Projects</button></li>
-                    <li><div class="dropdown-divider"></div></li>
-                    <li><button class="dropdown-item" type="button">Help</button></li>
-                    <li><button class="dropdown-item" type="button">Settings</button></li>
-                    <li><button class="dropdown-item" type="button">Sign out</button></li>
-                </ul>
+                <i class='material-icons' style="font-size: 24px;" >account_circle</i> Account
+            </button>
+            <div class="dropdown-menu dropdown-menu-right bg-dark m-0" #dropdownitems
+            [ngClass]="{ 'show': showDropdown }">
+                <h6 class="dropdown-header">Signed  in as Rahul</h6>
+                <button class="dropdown-item text-white "  type="button">Your Profile</button>
+                <button class="dropdown-item text-white" type="button">Your Projects</button>                
+                <button class="dropdown-item text-white" type="button">Settings</button>
+                <div class="m-0 p-0 px-2 " ><hr class=" border-secondary"></div>
+                <button class="dropdown-item text-white" type="button" (click)="signOut()">Sign out</button>
             </div>
-        </ng-container>
-        
-    </div>
+        </div>
+    </ng-container>        
 </nav>
 

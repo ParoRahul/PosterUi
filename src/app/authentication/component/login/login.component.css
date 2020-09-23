@@ -1,3 +1,12 @@
+:host{
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
 .parent{
     display: grid;
     place-items: center;
@@ -11,4 +20,8 @@
 .btn.focus,.btn:active.focus, .btn.active.focus {
     outline: none !important;
     box-shadow: none;
+}
+
+.bg-red {
+    background-color: rgb(236, 182, 182);
 }

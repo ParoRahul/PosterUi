@@ -1,6 +1,4 @@
-<div class="parent">
-    <br><br><br><br>
-    <div class="card text-center form-width">
+<div class="card text-center form-width">
     
     <form [formGroup]="form" class = "card-body">
         <button  class="btn btn-link btn-sm" (click) = "route2Home()">
@@ -10,7 +8,7 @@
         <p class="display-6 m-0 my-4">Sign in to Poster Maker</p>
         
         <input type="email" 
-                formControlName="username"
+                formControlName="mailid"
                 id="defaultLoginFormEmail" 
                 class="form-control mb-4" 
                 placeholder="E-mail">
@@ -18,19 +16,23 @@
         <input  type="password"
                 formControlName="password" 
                 id="defaultLoginFormPassword" 
-                class="form-control mb-4" 
+                class="form-control mb-0" 
                 placeholder="Password">                
 
-        <div class="m-0 mb-3 text-danger" *ngIf="!validLogin">Invalid Username and / or Password</div>
+        <div class = "text-right m-0 mb-4">
+            <small><a href="">Forget Password ?</a> </small>
+        </div>
 
-        <p class="my-4"><a href="">Forget Password ?</a> </p>
+        <div class="text-dark m-0 my-4 p-1 bg-red rounded" *ngIf="form.errors">
+            Invalid Username and / or Password
+        </div>
 
         <button class="btn btn-primary btn-block " 
                 [disabled]="!form.valid" 
                 type="submit"
                 (click)=login() >Sign in</button>
 
-        <p class="m-0 my-4 ">Not a member ? <a href="">Register</a></p>
+        <p class="m-0 my-4 text-muted text-monospace ">Not a member ? <a href="">Register</a></p>
         
         <!-- Social login -->
         <!-- <p>or sign in with</p> -->
@@ -39,5 +41,4 @@
             <span class="material-icons">facebook</span>
         </a> -->   
     </form>
-</div>
 </div>
