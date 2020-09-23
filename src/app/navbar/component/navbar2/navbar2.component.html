@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top" 
+    *ngIf="navbarService.homeNavgitionActive == false">
+    <i class='material-icons' style = 'color: aliceblue;'>widgets</i> 
+    <button class="navbar-toggler m-0" type="button"  (click)="toggleNavbar()">
+            <!-- <span class="navbar-toggler-icon"></span> keyboard_arrow_down-->
+            <span class="material-icons">list</span>
+    </button>
+    <div class="collapse navbar-collapse " [ngClass]="{ 'show': navbarOpen }" >
+        <ul class="navbar-nav m-0 mr-auto">
+            <li class="nav-item " [ngClass] = "{'active': activatelink == 'Explore' }" >
+                <a class="nav-link" href="#home" (click) = "activatelink = 'Explore'">Explore</a>
+            </li>
+            <li class="nav-item " [ngClass] = "{'active': activatelink == 'Feedback' }" >
+                <a class="nav-link" href="#home" (click) = "activatelink = 'Feedback'">Feedback</a>
+            </li>
+            <li class="nav-item " [ngClass] = "{'active': activatelink == 'Help' }" >
+                <a class="nav-link" href="#home" (click) = "activatelink = 'Help'">Help</a>
+            </li>
+        </ul>
+        <button class="btn btn-sm btn-outline-secondary bg-transparent float-right"  
+            type="button" (click) = "showDropDoen($event)" >
+            <i class='material-icons' style="font-size: 24px;" >account_circle</i> Account
+        </button>
+        <div class="dropdown-menu dropdown-menu-right bg-dark m-0" #dropdownitems
+        [ngClass]="{ 'show': showDropdown }">
+            <h6 class="dropdown-header">Signed  in as Rahul</h6>
+            <button class="dropdown-item text-white "  type="button">Your Profile</button>
+            <button class="dropdown-item text-white" type="button">Your Projects</button>                
+            <button class="dropdown-item text-white" type="button">Settings</button>
+            <div class="m-0 p-0 px-2 " ><hr class=" border-secondary"></div>
+            <button class="dropdown-item text-white" type="button" (click)="signOut()">Sign out</button>
+        </div>
+    </div>
+</nav>
